@@ -1,16 +1,17 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable eol-last */
-
-/* 
+/* eslint-disable */
+/*
 http://notesapp-v1.dicodingacademy.com/ 
 */
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
-
-const init = async () => {
+/* 
+"start-prod": "NODE_ENV=production node ./src/server.js",
+"start-dev": "nodemon ./src/server.js",
+"start": "node ./src/server.js",
+ */
+const init = async () => { 
   const server = Hapi.server({
-    port: 8080,
+    port: 5000,
     host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
     routes: {
       cors: {
